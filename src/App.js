@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Navbar, ProductListing, Cart, SavedLater } from "./Components/export";
+import { Routes, Route } from "react-router-dom";
+import { useData } from "./Context/DataProvider";
+import data from "./Database/ProductData.json";
+import { useEffect } from "react";
 
 function App() {
+  const { state, dispatch } = useData();
+  useEffect(() => {
+    dispatch({ type: "SET_PRODUCTS", payload: data });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ProductListing />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/savedlater" element={<SavedLater />} />
+      </Routes>
     </div>
   );
 }

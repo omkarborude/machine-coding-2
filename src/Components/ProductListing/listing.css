@@ -1,0 +1,22 @@
+.home-main-div {
+  display: flex;
+}
+
+.pr-listing-main-div {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  width: 100%;
+  /* justify-content: center; */
+}
+.card {
+  margin-left: 3rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+.card-img-div {
+  height: 15rem;
+}
+.card-img-div img {
+  height: 100%;
+}

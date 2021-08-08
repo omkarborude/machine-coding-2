@@ -1,0 +1,16 @@
+.saved-later-product-card {
+  display: flex;
+  width: 40%;
+  height: 15rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border: 1px solid gainsboro;
+}
+.savelater-img-div {
+  width: 15rem;
+  height: 15rem;
+}
+.savelater-img-div img {
+  width: 100%;
+  height: 100%;
+}
